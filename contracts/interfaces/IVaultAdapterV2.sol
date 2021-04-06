@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import "./IDetailedERC20.sol";
 
-/// Interface for Yearn Vault Adapter implementations.
-interface IVaultAdapter {
+/// Interface for IDLE Vault Adapter implementations.
+interface IVaultAdapterV2 {
 
   /// @dev Gets the token that the adapter accepts.
   function token() external view returns (IDetailedERC20);
@@ -25,5 +25,5 @@ interface IVaultAdapter {
   ///
   /// @param _recipient the recipient of the funds.
   /// @param _amount    the amount of funds to withdraw.
-  function withdraw(address _recipient, uint256 _amount) external;
+  function withdraw(address _recipient, uint256 _amount, bool _isHarvest) external;
 }
